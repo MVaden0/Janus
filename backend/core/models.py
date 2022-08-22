@@ -21,10 +21,7 @@ class Item(models.Model):
 
 
 class ItemRelationRecord(models.Model):
-    part = models.ForeignKey(
-        Item, 
-        on_delete=models.PROTECT
-    )
+    part = models.ForeignKey(Item, on_delete=models.PROTECT)
     amount = models.DecimalField(
         max_digits=7, 
         decimal_places=2, 

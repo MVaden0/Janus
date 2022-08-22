@@ -4,7 +4,7 @@ from .models import Item
 
 
 class PartAdminInline(admin.TabularInline):
-    model = Item.parts.through    
+    model = Item.parts.through
 
 
 @admin.register(Item)
