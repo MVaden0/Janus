@@ -3,8 +3,13 @@ from django.contrib import admin
 from .models import Item
 
 
+class ProductAdminInline(admin.TabularInline):
+    model = Item.parts.through
+    fk_name = 'product'
+
 class PartAdminInline(admin.TabularInline):
     model = Item.parts.through
+    fk_name = 'part'
 
 
 @admin.register(Item)
@@ -12,6 +17,7 @@ class ItemAdmin(admin.ModelAdmin):
     model = Item
 
     inlines = [
+        ProductAdminInline,
         PartAdminInline
     ]
 

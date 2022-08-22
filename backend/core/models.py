@@ -1,10 +1,11 @@
 from decimal import Decimal
+from itertools import product
 from django.db import models
 
 
 class Item(models.Model):
     name = models.CharField(max_length=255)
-    parts = models.ManyToManyField('self', through='ItemRelationRecord')
+    parts = models.ManyToManyField('Item', through='ItemRelationRecord')
     for_sale = models.BooleanField(default=True)
     price = models.DecimalField(
         max_digits=8, 
@@ -21,7 +22,17 @@ class Item(models.Model):
 
 
 class ItemRelationRecord(models.Model):
-    part = models.ForeignKey(Item, on_delete=models.PROTECT)
+    product = models.ForeignKey(
+        Item, 
+        on_delete=models.PROTECT,
+        related_name='%(class)s_product'
+    )
+    part = models.ForeignKey(
+        Item, 
+        on_delete=models.PROTECT,
+        related_name='%(class)s_part',
+        null=True
+    )
     amount = models.DecimalField(
         max_digits=7, 
         decimal_places=2, 
