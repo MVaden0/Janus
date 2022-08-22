@@ -1,5 +1,4 @@
 from decimal import Decimal
-
 from django.db import models
 
 
@@ -31,4 +30,9 @@ class ItemRelationRecord(models.Model):
         Item, 
         on_delete=models.PROTECT, 
         related_name='%(class)s_part'
+    )
+    amount = models.DecimalField(
+        max_digits=7, 
+        decimal_places=2, 
+        default=Decimal('00000.00')
     )
