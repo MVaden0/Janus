@@ -17,6 +17,12 @@ class Item(models.Model):
         verbose_name = 'item'
         verbose_name_plural = 'items'
 
+    def save(self, *args, **kwargs):
+        if not self.for_sale:
+            self.price = Decimal('000000.00')
+
+        super(Item, self).save(*args, **kwargs)
+
     def __str__(self) -> str:
         return self.name 
 
@@ -30,8 +36,7 @@ class ItemRelationRecord(models.Model):
     part = models.ForeignKey(
         Item, 
         on_delete=models.PROTECT,
-        related_name='%(class)s_part',
-        null=True
+        related_name='%(class)s_part'
     )
     amount = models.DecimalField(
         max_digits=7, 
