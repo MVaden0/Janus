@@ -1,0 +1,40 @@
+.optionsContainer {
+	padding-top: 3rem;
+	display: grid;
+  width: 100%;
+  grid-template-columns: auto auto auto auto;
+  gap: 40px;
+}
+
+.optionViewItems {
+	background-color: #fff;
+	height: 150px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+	border-left: 5px solid #A8C686;
+  clip-path: inset(0% 0% 0% 0% round .5rem);
+}
+
+.optionCreateItem {
+	background-color: #fff;
+	height: 150px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+	border-left: 5px solid #B0D7FF;
+  clip-path: inset(0% 0% 0% 0% round .5rem);
+}
+
+.optionLowStock {
+	background-color: #fff;
+	height: 150px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+	border-left: 5px solid #F45B69;
+  clip-path: inset(0% 0% 0% 0% round .5rem);
+}
+
+.optionViewFiles {
+	background-color: #fff;
+	height: 150px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+	border-left: 5px solid #EEB646;
+  clip-path: inset(0% 0% 0% 0% round .5rem);
+}
+
